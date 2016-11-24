@@ -18,4 +18,9 @@ bot.on("/hello", msg => {
   return bot.sendMessage(id, `Hello, ${ firstName } ${ lastName }!`);
 });
 
+bot.on("photo", msg => {
+  let id = msg.from.id;
+  return bot.sendMessage(id, "Wow, thanks for the photo!");
+});
+
 bot.connect();
