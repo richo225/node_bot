@@ -11,4 +11,11 @@ bot.on("text", msg => {
   return bot.sendMessage(id, `You said: ${ text }`);
 });
 
+// message /hello with params
+bot.on("/hello", msg => {
+  let id = msg.from.id;
+  let [cmdName, firstName, lastName] = msg.text.split(" ");
+  return bot.sendMessage(id, `Hello, ${ firstName } ${ lastName }!`);
+});
+
 bot.connect();
