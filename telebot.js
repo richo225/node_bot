@@ -15,9 +15,10 @@ bot.on("text", msg => {
 bot.on("/hello", msg => {
   let id = msg.from.id;
   let [cmdName, firstName, lastName] = msg.text.split(" ");
-  return bot.sendMessage(id, `Hello, ${ firstName } ${ lastName }!`);
+  return bot.sendMessage(id, `Your name is: ${ firstName } ${ lastName }!`);
 });
 
+// On every photo upload
 bot.on("photo", msg => {
   let id = msg.from.id;
   return bot.sendMessage(id, "Wow, thanks for the photo!");
